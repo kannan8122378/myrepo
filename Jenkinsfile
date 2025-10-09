@@ -1,10 +1,13 @@
 pipeline{
     agent any
-
+    
+    tools{
+        maven 'Maven'
     stages{
-        stage(Hello world){
+        stage(Build stage){
             steps{
-                echo 'Hello sunni'
+                sh 'mvn -v' 
+                sh 'mvn clean install'
             }
         }
     }
